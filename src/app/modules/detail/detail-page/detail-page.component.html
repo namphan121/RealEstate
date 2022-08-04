@@ -1,0 +1,35 @@
+<div id="container">
+    <div class="header">
+        <div class="logo">
+            <a [routerLink]="['/home']"><img src="../../../../assets/logo.png"></a>
+            <h2>Ditagis Rent</h2>
+        </div>
+        <div class="like">
+            <img src="../../../../assets/heart.png">
+            <p>Ưa thích</p>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="panel-img">
+            <div class="images">
+                <img [src]="imageToShow">
+                <img src="../../../../assets/left-arrow.png" class="arrow left" (click)="prevImg()">
+                <img src="../../../../assets/right-arrow.png" class="arrow right"  (click)="nextImg()">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-header">
+            <div class="information">
+                <h1>{{data.title}}</h1>
+                <p>{{data.address}}</p>
+                <p>Diện tích: {{data.area}}m2</p>
+            </div>
+            <div class="price">
+                <h1> {{data.price?.from}} - {{data.price?.to}} tỷ</h1>
+            </div>
+        </div>
+        <h3>Thông tin chi tiết</h3>
+        <span>{{data.description}}</span>
+    </div>
+</div>

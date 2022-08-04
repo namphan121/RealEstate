@@ -1,0 +1,66 @@
+<div id="container">
+    <div class="header">
+        <div class="logo">
+            <img src="../../../../assets/logo.png">
+            <h2>Ditagis Rent</h2>
+        </div>
+        <div class="like">
+            <img src="../../../../assets/heart.png">
+            <p>Ưa thích</p>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="search">
+            <h1>Sàn giao dịch bất động sản</h1>
+            <div class="search-option">
+                <div class="option">
+                    <div class="consciousOption">
+                        <h3>Tỉnh</h3>
+                        <select style="width:100px">
+                            <option [value]="-1">Chọn Tỉnh</option>
+                            <option *ngFor="let conscious of conscious">{{conscious.city}}</option>
+                        </select>
+                    </div>
+                    <div class="areaOption">
+                        <h3>Diện tích</h3>
+                        <select style="width:100px">
+                            <option [value]="-1">Diện tích</option>
+                            <option *ngFor="let area of areas">{{area.area}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btnSearch">
+                    <button><img src="../../../../assets/search.png"><h3>Tìm kiếm</h3></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="menu">
+            <h2>SẢN PHẨM</h2>
+            <ul>
+                <li><a href="#">Tất cả</a></li>
+                <li><a href="#">Chung cư</a></li>
+                <li><a href="#">Biệt thự</a></li>
+                <li><a href="#">Shophouse</a></li>
+                <li><a href="#">Condotel</a></li>
+            </ul>
+        </div>
+        <div class="product">
+            <div class="item" *ngFor="let item of data">
+                <div class="item-box" [routerLink]="[item.id,'detail']">
+                    <div>
+                      <p class="type">{{item.type.name}}</p>
+                      <img src="../../../../assets/heart-like.png" class="img-item">
+                    </div>
+                    <img [src]=item.avatar> 
+                    <div class="item-detail">
+                        <p class="title">{{item.title}}</p>
+                        <p class="address text-item">{{item.address}}</p>
+                        <p class="price text-item">Giá từ: <span>{{item.price.from}} - {{item.price.to}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
